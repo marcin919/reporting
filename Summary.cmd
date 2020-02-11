@@ -143,21 +143,3 @@ move .\Systeminfo.log ".\%COMPUTERNAME%\Systeminfo_%COMPUTERNAME%_%date%.log"
 move .\Public-IP.txt ".\%COMPUTERNAME%\Public-IP_%COMPUTERNAME%_%date%.log"
 move .\Slmgr.log ".\%COMPUTERNAME%\Slmgr_%COMPUTERNAME%_%date%.log"
 move .\Updates.log ".\%COMPUTERNAME%\Updates_%COMPUTERNAME%_%date%.log"
-REM HELP INFO
-REM /////////////////////////////////////////////////////////////////////////////////
-REM https://www.lima-city.de/thread/daten-automatisch-aus-text-datei-entnehmen
-REM https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/
-REM https://www.pcwelt.de/ratgeber/Windows-steuern-Die-besten-Kommandozeilen-Werkzeuge-fuer-Windows-56713.html
-REM https://sites.google.com/site/batchprogrammierung/befehle/how-to---einleitung/textdatei-einlesen
-
-
-REM 
-
-REM    0 = Schwarz       8 = Grau
-REM    1 = Blau        9 = Hellblau
-REM    2 = Grün       A = Hellgrün
-REM    3 = Türkis        B = Helltürkis
-REM    4 = Rot         C = Hellrot
-REM    5 = Lila      D = Helllila
-REM    6 = Gelb      E = Hellgelb
-REM   7 = Hellgrau       F = Weiß
