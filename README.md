@@ -1,11 +1,13 @@
 # reporting
 
-INFO
 
-https://www.lima-city.de/thread/daten-automatisch-aus-text-datei-entnehmen
-https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/
-https://www.pcwelt.de/ratgeber/Windows-steuern-Die-besten-Kommandozeilen-Werkzeuge-fuer-Windows-56713.html
-https://sites.google.com/site/batchprogrammierung/befehle/how-to---einleitung/textdatei-einlesen
+References:
+--------
+
+[daten aus txt datei](https://www.lima-city.de/thread/daten-automatisch-aus-text-datei-entnehmen)<br>
+[cmd behele](https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/)<br>
+[kommamdozeilen werkzeuge](https://www.pcwelt.de/ratgeber/Windows-steuern-Die-besten-Kommandozeilen-Werkzeuge-fuer-Windows-56713.html)<br>
+[text einlesen](https://sites.google.com/site/batchprogrammierung/befehle/how-to---einleitung/textdatei-einlesen)<br>
 
 
 
