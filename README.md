@@ -10,6 +10,10 @@ References:
 [text einlesen](https://sites.google.com/site/batchprogrammierung/befehle/how-to---einleitung/textdatei-einlesen)<br>
 [PowerShell – Nur erste oder letzte Zeilen einer Textdatei ausgeben](https://www.gservon.de/powershell-nur-erste-oder-letzte-zeilen-einer-textdatei-ausgeben/)<br>
    Get-Content <Dateipfad> | Select-Object -last <Zeilenanzahl>
+[ermitteln-des-standarddruckers-per-skript](https://www.mcseboard.de/topic/82979-ermitteln-des-standarddruckers-per-skript/) 
+[Alle Windows-Kommandos](https://www.axel-hahn.de/batch/helferlein-und-tabellen/alle-windows-kommandos?id=findstr)
+[more](http://www.ecodes.de/cmd-befehle-uebersicht/allgemeine/more_225/)
+
 
 
     0 = Schwarz       8 = Grau

@@ -1,7 +1,10 @@
-chcp 65001
-REM 	Windows Reporting Tool
-REM 	Version 2020-02-11 by marcin919
 @echo off
+chcp 65001 >nul & rem umlaute im Text darstellen
+
+REM 	Windows Reporting Tool
+REM 	Version 2020-02-12 by marcin919
+
+setlocal enableDelayedExpansion
 
 REM Create a path for the entire computer information
 mkdir %COMPUTERNAME%
@@ -13,7 +16,7 @@ set minute=%time:~3,2%
 
 REM 1. NETWORK
 
-color E1&&cls&&title Windows Reporting Tool (2020-02-11)
+color E1&&cls&&title Windows Reporting Tool (2020-02-12)
 echo NETZWERK >>"%Network%"
 echo Dieser Auswertung wurde um %stunde%:%minute% Uhr am %date% gestartet.>"%Network%" 
 
@@ -152,6 +155,20 @@ powershell -command "Get-HotFix | Sort-Object InstalledOn | Select-Object -last 
 REM setLocal enableDelayedExpansion
 REM for /f %%a in (Updates.log) do for /f "tokens=*" %%A in ('findstr /xs "%%a"') do set lastFound=%%A
 REM echo !lastFound! >>"%Summary%"
+echo.>>"%Summary%"
+
+
+REM 9 DRUCKER
+
+color 2a
+echo STANDARD DRUCKER >>"%Summary%"
+echo ---------------- >>"%Summary%"
+Set TMP=%cd%\TMP.log
+	wmic printer where "Default = 'True'" get Name>"%TMP%"
+    more +1 TMP.log  >>"%Summary%"
+
+
+del TMP.log
 echo.>>"%Summary%"
 
 color 6f
