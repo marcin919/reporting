@@ -15,7 +15,7 @@ REM 1. NETWORK
 
 color E1&&cls&&title Windows Reporting Tool (2020-02-11)
 echo NETZWERK >>"%Network%"
-echo Auswertung wurde um %stunde%:%minute% uhr am %date% gestartet.>"%Network%" 
+echo Dieser Auswertung wurde um %stunde%:%minute% Uhr am %date% gestartet.>"%Network%" 
 
 	ipconfig /all >>"%Network%" 
 	ping 1.1.1.1 >>"%Network%"
@@ -28,7 +28,7 @@ REM pathping 1.1.1.1 >>"%Network%"
 set Summary=%cd%\%COMPUTERNAME%\Summary_%COMPUTERNAME%_%date%.log
 
 echo.>"%Summary%"
-echo Auswertung wurde um gestartet: %date% %stunde%:%minute%>>"%Summary%"
+echo Dieser Auswertung wurde um %stunde%:%minute% Uhr am %date% gestartet.>>"%Summary%"
 echo.>>"%Summary%"	
 findstr "Windows-IP-Konfiguration" Network.log >>"%Summary%"
 echo ------------------------  >>"%Summary%"
@@ -64,6 +64,7 @@ color C1
 Set Key=%cd%\Key.log
 	wmic path softwarelicensingservice get OA3xOriginalProductKey >"%Key%"
 REM ohne Ausgabe in >>"%Summary%"
+
 
 REM 4. SYSTEMINFO
 
