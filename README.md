@@ -8,8 +8,8 @@ References:
 [cmd befehle](https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/)<br>
 [kommamdozeilen werkzeuge](https://www.pcwelt.de/ratgeber/Windows-steuern-Die-besten-Kommandozeilen-Werkzeuge-fuer-Windows-56713.html)<br>
 [text einlesen](https://sites.google.com/site/batchprogrammierung/befehle/how-to---einleitung/textdatei-einlesen)<br>
-
-
+[PowerShell – Nur erste oder letzte Zeilen einer Textdatei ausgeben](https://www.gservon.de/powershell-nur-erste-oder-letzte-zeilen-einer-textdatei-ausgeben/)<br>
+   Get-Content <Dateipfad> | Select-Object -last <Zeilenanzahl>
 
 
     0 = Schwarz       8 = Grau

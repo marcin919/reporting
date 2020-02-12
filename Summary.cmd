@@ -3,6 +3,7 @@ REM 	Windows Reporting Tool
 REM 	Version 2020-02-11 by marcin919
 @echo off
 
+REM Create a path for the entire computer information
 mkdir %COMPUTERNAME%
 set "AKTPFAD=%cd%"
 set Network=%cd%\Network.log
@@ -13,20 +14,22 @@ set minute=%time:~3,2%
 REM 1. NETWORK
 
 color E1&&cls&&title Windows Reporting Tool (2020-02-11)
-echo NETZWEK >>"%Network%"
-echo Auswertung wurde startet um : %date% %stunde%:%minute%  >"%Network%" 
-		
+echo NETZWERK >>"%Network%"
+echo Auswertung wurde um %stunde%:%minute% uhr am %date% gestartet.>"%Network%" 
+
 	ipconfig /all >>"%Network%" 
 	ping 1.1.1.1 >>"%Network%"
 	ping 8.8.8.8 >>"%Network%"
 
-REM Extra Netzwerk auswertung. Sckript Braucht viel mehr Zeit.
+REM Extra Netzwerk auswertung. Skript Braucht viel mehr Zeit.
 REM tracert 1.1.1.1 >>"%Network%"	
 REM pathping 1.1.1.1 >>"%Network%"
 
 set Summary=%cd%\%COMPUTERNAME%\Summary_%COMPUTERNAME%_%date%.log
 
 echo.>"%Summary%"
+echo Auswertung wurde um gestartet: %date% %stunde%:%minute%>>"%Summary%"
+echo.>>"%Summary%"	
 findstr "Windows-IP-Konfiguration" Network.log >>"%Summary%"
 echo ------------------------  >>"%Summary%"
 findstr "Hostname" Network.log >>"%Summary%"
@@ -87,8 +90,8 @@ REM 5. PUBLIC IP
 color A1
 REM wird IPv6 unterstuezt? Google DNS IPv6 wird hier angepingt
 
-ping -6 -n 1 2001:4860:4860::8888 | findstr "(0% Verlust)" && call Public-IPv6.vbs || call Public-IPv4.vbs
-REM call Public-IPv4.vbs
+REM ping -6 -n 1 2001:4860:4860::8888 | findstr "(0% Verlust)" && call Public-IPv6.vbs || call Public-IPv4.vbs
+ call Public-IPv4.vbs
 REM call Public-IPv6.vbs 
 
 
@@ -143,7 +146,7 @@ REM dism /online /get-Packages>"%Updates%"
 REM findstr /b "Installationszeit" Updates.log >>"%Summary%"
 
 powershell -command "Get-HotFix | Sort-Object HotFixID -Descending">"%Updates%"
-powershell -command "Get-HotFix | Sort-Object InstalledOn">>"%Summary%"
+powershell -command "Get-HotFix | Sort-Object InstalledOn | Select-Object -last 3">>"%Summary%"
 
 REM setLocal enableDelayedExpansion
 REM for /f %%a in (Updates.log) do for /f "tokens=*" %%A in ('findstr /xs "%%a"') do set lastFound=%%A
